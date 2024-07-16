@@ -22,7 +22,7 @@
         this.inventory_item_price = page.locator(".inventory_item_price")
         this.cart_quantity = page.locator(".cart_quantity")
         this.button_finish = page.getByRole('button', {name: 'finish'})
-        this.success_message = page.locator('.complete-header')
+        this.thank_you_message = page.locator('.complete-header')
         this.back_home = page.locator('#back-to-products')
     }
 
