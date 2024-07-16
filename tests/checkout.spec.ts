@@ -48,18 +48,23 @@ import exp from 'constants';
     // Checkout the product
     const cartPage = new CartPage(page)
     await cartPage.checkout_button.click()
-
+    
+    // fill personal information 
     const checkoutPage = new CheckoutPage(page)
     expect(await (checkoutPage.title_checkout_your_information)).toBeVisible()
     await checkoutPage.fillCheckoutInformation();
     
+    // Assert product details, quantity and price
     expect(await (checkoutPage.title_checkout_overview)).toBeVisible()
     expect(await (checkoutPage.inventory_item_name)).toContainText("Sauce Labs Backpack")
     expect(await (checkoutPage.inventory_item_price)).toContainText(itemPrice)
     expect(await (checkoutPage.cart_quantity)).toContainText("1")
 
+    // click finish to complete the checkout flow
     await checkoutPage.button_finish.click()
-    expect(await (checkoutPage.success_message)).toContainText("Thank you for your order!")
+
+    // Verify the Thank You message
+    expect(await (checkoutPage.thank_you_message)).toContainText("Thank you for your order!")
     expect(await (checkoutPage.back_home)).toBeVisible()
     });
   });
