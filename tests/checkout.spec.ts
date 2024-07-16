@@ -61,9 +61,5 @@ import exp from 'constants';
     await checkoutPage.button_finish.click()
     expect(await (checkoutPage.success_message)).toContainText("Thank you for your order!")
     expect(await (checkoutPage.back_home)).toBeVisible()
-
     });
-
-      
-  
   });
