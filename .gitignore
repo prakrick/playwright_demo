@@ -10,6 +10,10 @@ node_modules/
 # Ignore Playwright report
 /playwright-report/
 
+# Ignore Allure report
+/allure-results/
+/allure-report/
+
 # Ignore blob report
 /blob-report/
 
